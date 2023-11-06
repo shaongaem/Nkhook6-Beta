@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{2B583247-3B12-4DB9-B0AD-73E79333A8FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NKHook6</RootNamespace>
+    <AssemblyName>NKHook6</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Rounds\Rounds_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib" />
+    <Reference Include="MelonLoader" />
+    <Reference Include="System.Core">
+      <HintPath>..\..\OneDrive\OneDrive info\OneDrive\Desktop\dnSpy-net-win64\bin\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="UnhollowerBaseLib" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Rounds\Rounds_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\Bloons\IBloon.cs" />
+    <Compile Include="API\Bloons\IBloonEntity.cs" />
+    <Compile Include="API\BTDModStart.cs" />
+    <Compile Include="API\Events\Event.cs" />
+    <Compile Include="API\Events\EventBase.cs" />
+    <Compile Include="API\Events\EventBaseCancellable.cs" />
+    <Compile Include="API\Events\EventHeader.cs" />
+    <Compile Include="API\Events\KeyEvent.cs" />
+    <Compile Include="API\Events\KeyHeldEvent.cs" />
+    <Compile Include="API\Events\KeyPressEvent.cs" />
+    <Compile Include="API\Events\KeyReleaseEvent.cs" />
+    <Compile Include="API\Events\UnknownEventException.cs" />
+    <Compile Include="API\Events\UpdateEvent.cs" />
+    <Compile Include="API\Events\_Bloons\BloonEvent.cs" />
+    <Compile Include="API\Events\_Bloons\BloonEvents.cs" />
+    <Compile Include="API\Events\_Game\GameEvents.cs" />
+    <Compile Include="API\Events\_Player\PlayerEvents.cs" />
+    <Compile Include="API\Events\_Projectile\ProjectileEvents.cs" />
+    <Compile Include="API\Events\_Towers\TowerEvents.cs" />
+    <Compile Include="API\Events\_Weapons\WeaponEvents.cs" />
+    <Compile Include="API\Extensions.cs" />
+    <Compile Include="API\Game\IGameInstance.cs" />
+    <Compile Include="API\Game\IMap.cs" />
+    <Compile Include="API\Game\IPlayer.cs" />
+    <Compile Include="API\Map\Area.cs" />
+    <Compile Include="API\Map\AreaType.cs" />
+    <Compile Include="API\Map\Path.cs" />
+    <Compile Include="API\Map\PathSplitter.cs" />
+    <Compile Include="API\Map\Polygon.cs" />
+    <Compile Include="API\Registry.cs" />
+    <Compile Include="API\RegistryIDNotFoundException.cs" />
+    <Compile Include="API\RegistryIDTakenException.cs" />
+    <Compile Include="API\Registry\BloonRegistry.cs" />
+    <Compile Include="API\Registry\EventRegistry.cs" />
+    <Compile Include="API\Registry\MapRegistry.cs" />
+    <Compile Include="API\Registry\Point.cs" />
+    <Compile Include="API\Registry\TestMap.cs" />
+    <Compile Include="API\Registry\TowerRegistry.cs" />
+    <Compile Include="API\Towers\ITower.cs" />
+    <Compile Include="API\Towers\ITowerEntity.cs" />
+    <Compile Include="API\Towers\Projectiles\IProjectile.cs" />
+    <Compile Include="API\Towers\Projectiles\IProjectileEntity.cs" />
+    <Compile Include="API\Towers\Upgrades\IUpgrade.cs" />
+    <Compile Include="API\Towers\Weapons\IWeapon.cs" />
+    <Compile Include="KHook6_Impl\Implementations\Game\NGameInstance.cs" />
+    <Compile Include="NKHook6_Impl\Bloons\CreatedPatch.cs" />
+    <Compile Include="NKHook6_Impl\Bloons\DeletedPatch.cs" />
+    <Compile Include="NKHook6_Impl\Bloons\LeakedPatch.cs" />
+    <Compile Include="NKHook6_Impl\Bloons\MovePatch.cs" />
+    <Compile Include="NKHook6_Impl\Bloons\RotatePatch.cs" />
+    <Compile Include="NKHook6_Impl\Entry.cs" />
+    <Compile Include="NKHook6_Impl\Extensions\GameExt.cs" />
+    <Compile Include="NKHook6_Impl\Game\RoundEndPatch.cs" />
+    <Compile Include="NKHook6_Impl\Game\RoundStartPatch.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BadBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BadFortifiedBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BfbBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BfbFortifiedBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BlackBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BlackCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BlackRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BlackRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BlueBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BlueCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BlueRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\BlueRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\CeramicBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\CeramicCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\CeramicFortifiedBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\CeramicFortifiedCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\CeramicRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\CeramicRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\CeramicRegrowFortifiedBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\CeramicRegrowFortifiedCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\DdtBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\DdtCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\DdtFortifiedBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\DdtFortifiedCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\GreenBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\GreenCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\GreenRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\GreenRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\LeadBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\LeadCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\LeadFortifiedBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\LeadFortifiedCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\LeadRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\LeadRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\LeadRegrowFortifiedBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\LeadRegrowFortifiedCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\MoabBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\MoabFortifiedBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\NBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\NBloonEntity.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\PinkBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\PinkCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\PinkRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\PinkRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\PurpleBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\PurpleCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\PurpleRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\PurpleRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\RainbowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\RainbowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\RainbowRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\RainbowRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\RedBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\RedCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\RedRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\RedRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\WhiteBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\WhiteCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\WhiteRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\WhiteRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\YellowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\YellowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\YellowRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\YellowRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\ZebraBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\ZebraCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\ZebraRegrowBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\ZebraRegrowCamoBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\ZomgBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Bloons\ZomgFortifiedBloon.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Towers\NTower.cs" />
+    <Compile Include="NKHook6_Impl\Implementations\Towers\NTowerEntity.cs" />
+    <Compile Include="NKHook6_Impl\Logger.cs" />
+    <Compile Include="NKHook6_Impl\Other\_TitleScreen\StartPatch.cs" />
+    <Compile Include="NKHook6_Impl\Towers\CreatedPatch.cs" />
+    <Compile Include="NKHook6_Impl\Towers\DeletedPatch.cs" />
+    <Compile Include="NKHook6_Impl\Towers\SelectedPatch.cs" />
+    <Compile Include="NKHook6_Impl\Towers\SoldPatch.cs" />
+    <Compile Include="NKHook6_Impl\Towers\UpgradePatch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
