@@ -2,7 +2,7 @@
 using Assets.Scripts.Unity.UI_New.InGame;
 using NKHook6.API.Game;
 
-namespace KHook6_Impl.Implementations.Game
+namespace Bloons_Impl.Implementations.Game
 {
 	// Token: 0x0200002E RID: 46
 	public class NGameInstance : IGameInstance
