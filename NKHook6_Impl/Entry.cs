@@ -12,9 +12,9 @@ namespace NKHook6_Impl
 		public override void OnApplicationStart()
 		{
 			base.OnApplicationStart();
-			Logger.Log("Starting NKHook6 API Implementation");
+			MelonLogger.Log("Starting NKHook6 (Beta) API Implementation");
 			new EventRegistry();
-			Logger.Log("Google translate of NKHook6 API to TARGET has begun".Replace("TARGET", "BloonsTD6"));
+			MelonLogger.Log.Log("Google translate of NKHook6 (Beta) API to TARGET has begun".Replace("TARGET", "BloonsTD6"));
 		}
 
 		// Token: 0x06000079 RID: 121 RVA: 0x000028AF File Offset: 0x00000AAF
