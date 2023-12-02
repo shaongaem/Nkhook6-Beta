@@ -10,3 +10,4 @@ Beta v0.1
 Beta v.0.13
  - Added 2 more utils
  - fixed a bug and more
+-note: v0.13 file has not been uploaded yet
