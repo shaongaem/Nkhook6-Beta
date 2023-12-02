@@ -5,4 +5,8 @@ A Full on remake of NKHOOK6 for btd6 it is an moding utilty to make mods an patc
 
 Beta v0.1
 
- -Nkhook6 remake was made!
+ - Nkhook6 remake was made!
+
+Beta v.0.13
+ - Added 2 more utils
+ - fixed a bug and more
